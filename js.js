@@ -16,40 +16,54 @@ Vue.component('sitecontent', {
     + "</main>"
 })
 
-
-
 Vue.component('specialproducts', {
 
-    data: {
-        function(){
+     data: function(){
             return{
                 specialProductsArray: this.getSpecialProducts()
             }
-        }
-    },
+        },
 
     methods: {
         getSpecialProducts(){
-            axios.get('products.json', {
-                params: {
-                    specialProducts: true
-                }
-            })
+            fetch('products.json')
+            .then(response => response.json())
             .then(data => {
-                return data
-            })
-        }
-    },
+
+                let productsArray = [];
+
+                data.products[0].calathea.map(product => {
+                    
+                    productsArray.push(product)
+                })
+                data.products[1].gullranka.map(product => {
+                    
+                    productsArray.push(product)
+                })
+                data.products[2].monstera.map(product => {
+                    
+                    productsArray.push(product)
+                })
+                let endProductArray = [];
+                productsArray.map(test => {
+                    if(test.specialProduct === true)
+                    {
+                        endProductArray.push(test)
+                        /* console.log(test) */
+                    }})
+                    console.log(endProductArray)
+                return endProductArray; 
+           })
+       }
+   }, 
 
     template: "<section id='specialProductsSection'>"
-    + "<h1>Superblommorna</h1>"
-    + "<div id='productContainer' v-for='product in specialProductsArray'>"
-    + "<article id='product-item1' class='productItems'> <img src='{{product.image}}'></img> <h3>{{product.name}}</h3> <p>{{product.description}}</p> <img></img> </article>"
-    + "</div>"
+    + "<h1 width=250px height=250px>{{specialProductsArray}}</h1>"
+   /*  + "<div id='productContainer' v-for='product in specialProductsArray'>"
+    + "<article id='product-item1' class='productItems'> <img width='200' src='{{product.image}}'></img> <h3>{{product.name}}</h3> <p>{{product.description}}</p> <img></img> </article>" */
+    /* + "</div>" */
     + "</section>"
 })
-
-
 
 var componentDemoVue = new Vue(
     {
@@ -76,6 +90,12 @@ var componentDemoVue = new Vue(
 var contentComponentVue = new Vue(
     {
         el: '#contentComponent',
-        data: {test: true},
+        data: {
+            test: true
+        },
     }
 )
+
+var productsComponentVue = new Vue({
+    el: '#productsComponent'
+})
