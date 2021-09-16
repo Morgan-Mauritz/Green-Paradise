@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+    justify-items: center;
+}
+
+#logo{
+    float: left;
+    font-size: 2em;
+    padding-left: 0.5em;
+    padding-top: 0.4em;
+}
+.Nav{
+    display: grid;
+    padding-top: 1em;
+    font-size: 1.3em;
+    grid-row: 1;
+}
+#NavHome{
+    grid-column: 1;
+}
+#NavProducts{
+    grid-column: 2;
+}
+#NavAboutUs{
+    grid-column: 3;
+}
+#NavContactUs{
+    grid-column: 4;
+}
+#shoppingCart{
+    grid-column: 5;
+    padding-top: 0.9em;
+    padding: auto;
+    
+}
+#hamburgerMenu{
+    position: absolute;
+    right: 0;
+    padding: 1em 1em 0 0;
+    cursor: pointer;
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    
+    .open{
+        transform: translateX(300px);
+    }
+
+    #bodyImageText{
+        position: absolute;
+        top: 3.3em;
+        left: 20%;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    #bodyImage{
+        display: flex;
+        position: relative;
+        padding-top: 1.3em;
+        left:0;
+    }
+
+    .Nav{
+        z-index: -1;
+        position:absolute;
+        right: 2em;
+        display: none;
+    }
+
+    #NavHome{
+        top: 2em;
+    }
+    #NavProducts{
+        top: 4em;
+    }
+    #NavAboutUs{
+        top: 6em;
+    }
+    #NavContactUs{
+        top: 8em;
+    }
+    #shoppingCart{
+        top: 10em;
+    }
+}

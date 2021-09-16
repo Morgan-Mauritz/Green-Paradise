@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    </link>
+    <title>Grönt Paradis</title>
+</head>
+
+<body>
+    <div id="gridContainer">
+
+    
+        <div id="headerComponent">
+            <a id='logo'>Grönt Paradis</a>
+            <img src="images/hamburgerMenu.png" width="40px" id="hamburgerMenu" v-if="mobileView"
+                v-on:click="showNavMobile()"></img>
+            <siteheader />
+        </div>
+
+        <div id="contentComponent">
+            <sitecontent />
+            <specialproducts></specialproducts>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="js.js"></script>
+</body>
+
+</html>
