@@ -15,7 +15,6 @@
 <body>
     <div id="gridContainer">
 
-    
         <div id="headerComponent">
             <a id='logo'>Grönt Paradis</a>
             <img src="images/hamburgerMenu.png" width="40px" id="hamburgerMenu" v-if="mobileView"
@@ -29,7 +28,13 @@
 
         <div id="productsComponent">
             <specialproducts/>
+            <div v-show="false" v-for='products in specialProductsArrayTemp'></div>
         </div>
+
+        <div id="aboutUsComponent">
+            <aboutus/>
+        </div>
+
     </div>
 
 

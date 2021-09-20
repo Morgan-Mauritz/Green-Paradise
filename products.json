@@ -1,15 +1,14 @@
 {
     "products":[
-        {
-            "calathea":[
                 {
                     "id": 0,
                     "name": "Calathea White Fusion",
                     "price": 299,
                     "rating": 4,
                     "image": "images/whitefusion.jpg",
-                    "specialProduct": true,
-                    "description": "lorem ipsum condecer delemene kokomoko"
+                    "specialProduct": false,
+                    "description": "lorem ipsum condecer delemene kokomoko aewrnhufi ameuif naeuif naeufi asenuifasnfeu asneuif senf ",
+                    "type": "calathea"
                 },
                 {
                     "id": 1,
@@ -18,80 +17,88 @@
                     "rating": 3,
                     "image": "images/makoyana.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko"
+                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "type": "calathea"
                 },
                 {
                     "id": 2,
                     "name": "Calathea Lancifolia",
                     "price": 399,
                     "rating": 5,
-                    "image": "images/lancifolioa.jpg",
-                    "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko"
-                }
-            ]
-        },
-        {
-            "gullranka":[
+                    "image": "images/lancifolia.jpg",
+                    "specialProduct": true,
+                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "type": "calathea"
+                },
                 {
-                    "id": 0,
+                    "id": 3,
                     "name": "Gullranka N'joy",
                     "price": 139,
                     "rating": 3,
                     "image": "images/n'joy.jpg",
-                    "specialProduct": true,
-                    "description": "lorem ipsum condecer delemene kokomoko"
+                    "specialProduct": false,
+                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "type": "gullranka"
                 },
                 {
-                    "id": 1,
+                    "id": 4,
                     "name": "Marble Queen",
                     "price": 99,
                     "rating": 4,
                     "image": "images/marblequeen.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko"
+                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "type": "gullranka"
                 },
                 {
-                    "id": 2,
+                    "id": 5,
                     "name": "Silverranka",
                     "price": 149,
                     "rating": 5,
                     "image": "images/silverranka.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko"
-                }
-            ]
-        },
-        {
-            "monstera":[
+                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "type": "gullranka"
+                },
                 {
-                    "id": 0,
+                    "id": 6,
                     "name": "Albo Variegata",
                     "price": 2399,
                     "rating": 5,
                     "image": "images/albo.jpg",
-                    "specialProduct": true,
-                    "description": "lorem ipsum condecer delemene kokomoko"
+                    "specialProduct": false,
+                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "type": "monstera"
                 },
                 {
-                    "id": 1,
+                    "id": 7,
                     "name": "Thai Constellation",
                     "price": 899,
                     "rating": 4,
                     "image": "images/thaiconstellation.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko"
+                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "type": "monstera"
                 },
                 {
-                    "id": 2,
+                    "id": 8,
                     "name": "Monstera Deliciosa",
                     "price": 1199,
                     "rating": 5,
-                    "image": "images/delicosa.jpg",
-                    "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko"
+                    "image": "images/deliciosa.jpg",
+                    "specialProduct": true,
+                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "type": "monstera"
+                },
+                {
+                    "id": 9,
+                    "name": "Calathea Orbifolia",
+                    "price": 465,
+                    "rating": 4,
+                    "image": "images/orbifolia.jpg",
+                    "specialProduct": true,
+                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "type": "calathea"
                 }
             ]
         }
-    ]
-}

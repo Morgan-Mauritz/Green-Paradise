@@ -9,67 +9,93 @@ Vue.component('siteheader', {
 })
 
 Vue.component('sitecontent', {
-    template: "<main id='bodyContent'>" 
-    + "<img src='images/header-background.jpg' id='bodyImage' width=100% height=auto> "
-    + "<p id='bodyImageText'>Välkommen till ditt </br>Gröna Paradis</p>" 
-    + "</img>"
-    + "</main>"
+    template: "<main id='bodyContent'>"
+        + "<img src='images/header-background.jpg' id='bodyImage' width=100% height=auto> "
+        + "<p id='bodyImageText'>Välkommen till ditt </br>Gröna Paradis</p>"
+        + "</img>"
+        + "</main>"
+})
+
+Vue.component('aboutus', {
+    template: `<div id='aboutUsSection'>
+    <h2 id='aboutUsHeader'>Vi är Grönt Paradis</h2>
+    <img id='aboutUsImg' src='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80'/>
+    <h3 id='aboutUsSubHeader'>Vi lever för det gröna växtriket</h3>
+    <p id='aboutUsText'>lorem ipsum dolor amit bla bla bla text kommer här en fin beskrivning av vad vi gör på grönt paradis du vet det, jag vet det. alla vet det.</p>
+    </div>`
+})
+
+var productsComponentVue = new Vue({
+    
+    el: '#productsComponent',
+
+    data: {
+        specialProductsArrayTemp: []
+    },
+
+    methods: {
+        getSpecialProducts: function () {
+        fetch('products.json')
+            .then(resp => resp.json())
+            .then(data => {
+                let count = 0;
+
+                data.products.map(product => {
+                    if (product.specialProduct === true && count <= 2) {
+                        this.specialProductsArrayTemp.push(product)
+                        console.log(this.specialProductsArrayTemp)
+                        count++;
+                    }
+                })
+            })
+        }
+    },
+
+    created() {
+        this.getSpecialProducts();
+    }
 })
 
 Vue.component('specialproducts', {
 
-     data: function(){
-            return{
-                specialProductsArray: this.getSpecialProducts()
-            }
-        },
+    data: {
+        specialProductsArray: []
+    },
+    methods:{
+        setList: function(){
+            this.specialProductsArray = productsComponentVue.specialProductsArrayTemp
+        }
+    },
+    
+    created(){
+        this.setList()
+    },
 
-    methods: {
-        getSpecialProducts(){
-            fetch('products.json')
-            .then(response => response.json())
-            .then(data => {
-
-                let productsArray = [];
-
-                data.products[0].calathea.map(product => {
-                    
-                    productsArray.push(product)
-                })
-                data.products[1].gullranka.map(product => {
-                    
-                    productsArray.push(product)
-                })
-                data.products[2].monstera.map(product => {
-                    
-                    productsArray.push(product)
-                })
-                let endProductArray = [];
-                productsArray.map(test => {
-                    if(test.specialProduct === true)
-                    {
-                        endProductArray.push(test)
-                        /* console.log(test) */
-                    }})
-                    console.log(endProductArray)
-                return endProductArray; 
-           })
-       }
-   }, 
-
-    template: "<section id='specialProductsSection'>"
-    + "<h1 width=250px height=250px>{{specialProductsArray}}</h1>"
-   /*  + "<div id='productContainer' v-for='product in specialProductsArray'>"
-    + "<article id='product-item1' class='productItems'> <img width='200' src='{{product.image}}'></img> <h3>{{product.name}}</h3> <p>{{product.description}}</p> <img></img> </article>" */
-    /* + "</div>" */
-    + "</section>"
+    template: `<section id='specialProductsSection'>
+        <h2 id='productsHeader'>Utvalda produkter</h2>
+        <div class='productContainer' v-for='product in specialProductsArray'> 
+        <article class='productItems'> <img class='productsImage':src='product.image'/> <h3 class='product-title'>{{product.name}}</h3> <p class='product-description'>{{product.description}}</p> <button class='specialProductsButton'><span class='specialProductsButtonText'>Lägg till i korgen</span></button> </article>
+        </div>
+        </section>`
 })
+
+
+
+
+
+
+
+
+
+
+
+
 
 var componentDemoVue = new Vue(
     {
         el: '#headerComponent',
         data: {
-            mobileView: false, 
+            mobileView: false,
             showNav: false
         },
         methods: {
@@ -80,7 +106,7 @@ var componentDemoVue = new Vue(
 
             }
         },
-        created() { 
+        created() {
             this.getView();
             window.addEventListener('resize', this.getView);
         }
@@ -92,10 +118,13 @@ var contentComponentVue = new Vue(
         el: '#contentComponent',
         data: {
             test: true
-        },
+        }
     }
 )
 
-var productsComponentVue = new Vue({
-    el: '#productsComponent'
-})
+var aboutUsComponentVue = new Vue(
+    {
+        el: '#aboutUsComponent'
+    }
+)
+
