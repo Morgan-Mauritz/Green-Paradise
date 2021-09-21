@@ -7,19 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-a11y="true"></script>
     <link rel="stylesheet" href="style.css">
     </link>
     <title>Grönt Paradis</title>
 </head>
 
 <body>
-    <div id="gridContainer">
+    <div id="bodyContainer">
+
+        <div id="overlay" onClick="navCloseBtn()"></div>
+        <div id='mobileNav'>
+            <sitenav />
+        </div>
 
         <div id="headerComponent">
             <a id='logo'>Grönt Paradis</a>
-            <img src="images/hamburgerMenu.png" width="40px" id="hamburgerMenu" v-if="mobileView"
-                v-on:click="showNavMobile()"></img>
-            <siteheader />
+            <img class="hide" src="images/hamburgerMenu.png" width="40px" id="hamburgerMenu" v-if="mobileView"
+            v-on:click='showNav(this)'></img>
         </div>
 
         <div id="contentComponent">
@@ -33,6 +38,14 @@
 
         <div id="aboutUsComponent">
             <aboutus/>
+        </div>
+
+        <div id="contactUsComponent">
+            <contactus/>
+        </div>
+
+        <div id="footerComponent">
+            <vuefooter/>
         </div>
 
     </div>

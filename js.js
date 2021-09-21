@@ -1,11 +1,15 @@
-Vue.component('siteheader', {
-    template: "<header id='header'>"
-        + "<a id='NavHome' class='Nav'>Hem</a>"
-        + "<a id='NavProducts' class='Nav'>Växter</a>"
-        + "<a id='NavAboutUs' class='Nav'>Om oss</a>"
-        + "<a id='NavContactUs' class='Nav'>Kontakt</a>"
-        + "<img src='images/shopping-cart.png' width='30' height='30' id='shoppingCart' class='Nav'/>"
-        + "</header>"
+Vue.component('sitenav', {
+    template: `<div id='Nav'>
+    <p id='navClose' v-on:click='navCloseBtn()'><i class='fas fa-times'></i></p>
+    <ul id='menuList'>
+        <li id='NavHome' class='navLinks' v-on:click='navCloseBtn()'>Hem</li>
+        <li id='NavProducts' class='navLinks' v-on:click='navCloseBtn()'>Växter</li>
+        <li id='NavAboutUs' class='navLinks' v-on:click='navCloseBtn()'>Om oss</li>
+        <li id='NavContactUs' class='navLinks' v-on:click='navCloseBtn()'>Kontakt</li>
+    </ul>
+    <img src='images/shopping-cart.png' width='30' height='30' id='shoppingCart' class='Nav'/>
+    </div>
+    `
 })
 
 Vue.component('sitecontent', {
@@ -23,6 +27,32 @@ Vue.component('aboutus', {
     <h3 id='aboutUsSubHeader'>Vi lever för det gröna växtriket</h3>
     <p id='aboutUsText'>lorem ipsum dolor amit bla bla bla text kommer här en fin beskrivning av vad vi gör på grönt paradis du vet det, jag vet det. alla vet det.</p>
     </div>`
+})
+
+Vue.component('contactus', {
+    template: `<div id='contactUsContainer'>
+    <h2 id='contactUsHeader'>Kontakta oss</h2>
+    <label class='inputLabel'>Förnamn</label>
+    <input class='inputForm' placeholder='Fyll i förnamn...'></input>
+    <label class='inputLabel'>E-mail</label>
+    <input class='inputForm' placeholder='Fyll i e-mail...'></input>
+    <label class='inputLabel'>Meddelande</label>
+    <textarea class='inputForm' id='messageInput' placeholder='Fyll i meddelande...'></textarea >
+    <button id='messageButton'>Skicka meddelande</button>
+    </div>` 
+})
+
+Vue.component('vuefooter', {
+    template: `<div id='footer'>
+    <a class='footerLinks'>Kontaktuppgifter</a>
+    <a class='footerLinks'>GP@gmail.com</a>
+    <a class='footerLinks'>0739995552</a>
+    <div >
+    <span class="fab fa-facebook-square"></span>
+    <span class="fab fa-instagram"></span>
+    <span class="fab fa-twitter"></span>
+    </div>
+    </div>` 
 })
 
 var productsComponentVue = new Vue({
@@ -86,25 +116,20 @@ Vue.component('specialproducts', {
 
 
 
-
-
-
-
+var navComponentVue = new Vue({
+    el: '#mobileNav'
+})
 
 var componentDemoVue = new Vue(
     {
         el: '#headerComponent',
         data: {
-            mobileView: false,
-            showNav: false
+            mobileView: false
         },
         methods: {
             getView() {
                 this.mobileView = window.innerWidth <= 600;
             },
-            showNavMobile() {
-
-            }
         },
         created() {
             this.getView();
@@ -128,3 +153,25 @@ var aboutUsComponentVue = new Vue(
     }
 )
 
+var contactUsComponentVue = new Vue({
+    el: '#contactUsComponent'
+})
+
+var footerComponentVue = new Vue({
+    el: '#footerComponent'
+})
+
+function showNav(){
+    {
+        console.log("test")
+        document.getElementById('mobileNav').className = "slide-in"
+        document.getElementById("hamburgerMenu").style.display = "none"
+        document.getElementById('overlay').style.display = "block"
+    }
+}
+
+function navCloseBtn(){
+    document.getElementById('mobileNav').className = ""
+    document.getElementById("hamburgerMenu").style.display = "block"
+    document.getElementById('overlay').style.display = "none"
+}
