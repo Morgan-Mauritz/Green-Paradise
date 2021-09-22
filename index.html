@@ -13,40 +13,43 @@
     <title>Grönt Paradis</title>
 </head>
 
-<body>
+<body id="bodyContent">
     <div id="bodyContainer">
+            <div id="headerComponent">
+                <a id='logo'>Grönt Paradis</a>
+                <img class="hide" src="images/hamburgerMenu.png" width="40px" id="hamburgerMenu" v-if="mobileView"
+                v-on:click='showNav(this)'></img>
+            </div>
 
-        <div id="overlay" onClick="navCloseBtn()"></div>
-        <div id='mobileNav'>
-            <sitenav />
+            <div id="overlay" onClick="navCloseBtn()"></div>
+            <div id='mobileNav'>
+                <sitenav/>
+            </div>
+        
+        
+        <div id="startPage">
+            <div id="contentComponent">
+                <sitecontent />
+            </div>
+    
+            <div id="productsComponent">
+                <specialproducts/>
+                <div v-show="false" v-for='products in specialProductsArrayTemp'></div>
+            </div>
+    
+            <div id="aboutUsComponent">
+                <aboutus/>
+            </div>
+    
+            <div id="contactUsComponent">
+                <contactus/>
+            </div>
+    
+            <div id="footerComponent">
+                <vuefooter/>
+            </div>
         </div>
-
-        <div id="headerComponent">
-            <a id='logo'>Grönt Paradis</a>
-            <img class="hide" src="images/hamburgerMenu.png" width="40px" id="hamburgerMenu" v-if="mobileView"
-            v-on:click='showNav(this)'></img>
-        </div>
-
-        <div id="contentComponent">
-            <sitecontent />
-        </div>
-
-        <div id="productsComponent">
-            <specialproducts/>
-            <div v-show="false" v-for='products in specialProductsArrayTemp'></div>
-        </div>
-
-        <div id="aboutUsComponent">
-            <aboutus/>
-        </div>
-
-        <div id="contactUsComponent">
-            <contactus/>
-        </div>
-
-        <div id="footerComponent">
-            <vuefooter/>
-        </div>
+        
 
     </div>
 

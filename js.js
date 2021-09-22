@@ -7,7 +7,6 @@ Vue.component('sitenav', {
         <li id='NavAboutUs' class='navLinks' v-on:click='navCloseBtn()'>Om oss</li>
         <li id='NavContactUs' class='navLinks' v-on:click='navCloseBtn()'>Kontakt</li>
     </ul>
-    <img src='images/shopping-cart.png' width='30' height='30' id='shoppingCart' class='Nav'/>
     </div>
     `
 })
@@ -113,7 +112,9 @@ Vue.component('specialproducts', {
 
 
 
-
+/* var test = new Vue({
+    el: '#bodyContainer'
+}) */
 
 
 var navComponentVue = new Vue({
@@ -167,11 +168,14 @@ function showNav(){
         document.getElementById('mobileNav').className = "slide-in"
         document.getElementById("hamburgerMenu").style.display = "none"
         document.getElementById('overlay').style.display = "block"
+        document.getElementById('bodyContent').style.overflow = "hidden"
     }
 }
 
 function navCloseBtn(){
+    console.log("test2")
     document.getElementById('mobileNav').className = ""
     document.getElementById("hamburgerMenu").style.display = "block"
     document.getElementById('overlay').style.display = "none"
+    document.getElementById('bodyContent').style.overflow = "visible"
 }

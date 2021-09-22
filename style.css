@@ -5,7 +5,7 @@
 
 #header{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     text-align: center;
     justify-items: center;
@@ -56,32 +56,40 @@
 
 @media screen and (max-width: 600px) {
 
+    #bodyContainer{
+        overflow: visible;
+    }
+
     #Nav{
         z-index: +2;
         position: fixed;
-        background-color: gray;
-        width: 40vw;
+        background-color: #9fb598;
+        width: 50vw;
         height: 100vh;
         top: 0;
         right: 0;
-        transform: translateX(40vw);
+        transform: translateX(50vw);
     }
 
     .slide-in{
         z-index: +1;
-        transform: translateX(-39vw);
+        transform: translateX(-50vw);
         transition: all 400ms ease;
+        position: fixed;
+        top: 0;
+        right: 0;
     }
 
     #menuList{
         list-style: none;
-        padding: 0 1.5em;
+        padding: 0 2em;
         font-size: 1.5em;
     }
 
     #navClose{
         text-align: right;
-        padding: 1rem;
+        padding: 1em;
+        padding-right: 1.2em;
         font-size: 2em;
     }
 
@@ -94,19 +102,13 @@
         position:fixed;
         top: 0;
         left: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         background-color: gray;
         opacity: 50%;
         display: none;
     }
 
-
-
-    #shoppingCart{
-        width: 2em;
-        height: 2em;
-    }
 
     #bodyImageText{
         position: absolute;
@@ -147,8 +149,8 @@
     .productsImage{
         margin-left: auto;
         margin-right: auto;
-        width: 80%;
-        height: 100%;
+        width: 70vw;
+        height: 50vh;
     }
     .product-title{
         margin-top: 1em;
