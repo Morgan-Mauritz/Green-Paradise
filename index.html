@@ -15,8 +15,12 @@
 
 <body id="bodyContent">
     <div id="bodyContainer">
+
             <div id="headerComponent">
-                <a id='logo'>Grönt Paradis</a>
+                <a id='logo' v-on:click='openStart'>Grönt Paradis</a>
+                <img v-on:click="openCart" id="shoppingCart" width="40px" src="images/shopping-cart.png">
+                    <p id="shoppingCartAmount">{{shoppingCartAmount}}</p>
+                </img>
                 <img class="hide" src="images/hamburgerMenu.png" width="40px" id="hamburgerMenu" v-if="mobileView"
                 v-on:click='showNav(this)'></img>
             </div>
@@ -27,7 +31,7 @@
             </div>
         
         
-        <div id="startPage">
+        <div id="startPage" v-show="tab == 'start'">
             <div id="contentComponent">
                 <sitecontent />
             </div>
@@ -44,12 +48,24 @@
             <div id="contactUsComponent">
                 <contactus/>
             </div>
-    
-            <div id="footerComponent">
-                <vuefooter/>
+        </div>
+
+
+
+        <div id="cartPage" v-if="tab == 'cart'" v-show="tab">
+            <div id="productsFinal">
+                <productsfinal/>
             </div>
         </div>
         
+
+
+
+
+
+        <div id="footerComponent">
+            <vuefooter/>
+        </div>
 
     </div>
 
