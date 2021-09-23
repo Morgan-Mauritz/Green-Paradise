@@ -31,12 +31,12 @@
             </div>
         
         
-        <div id="startPage" v-show="tab == 'start'">
+        <div id="startPage"  v-show="tab == 'start'">
             <div id="contentComponent">
                 <sitecontent />
             </div>
     
-            <div id="productsComponent">
+            <div id="productsComponent" v-if='showSpecialProducts'>
                 <specialproducts/>
                 <div v-show="false" v-for='products in specialProductsArrayTemp'></div>
             </div>
@@ -52,10 +52,14 @@
 
 
 
-        <div id="cartPage" v-if="tab == 'cart'" v-show="tab">
-            <div id="productsFinal">
-                <productsfinal/>
-            </div>
+        <div id="cartPage" v-if="tab == 'cart'">
+            <productsfinal/>
+        </div>
+
+
+
+        <div id="adminPageContainer"  v-show="tab == 'admin'" v-if='errorManagement'>
+            <adminpage/>
         </div>
         
 

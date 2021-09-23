@@ -5,6 +5,7 @@
 #headerComponent{
     width: 100%;
     height: 4.5em;
+    background-color: rgb(224, 223, 216);
 }
 #logo{
     float: left;
@@ -30,7 +31,7 @@
     right: 3.5em;
     font-size: 1.3em;
     font-weight: bold;
-    color: green;
+    color: rgb(3, 104, 3);
 }
 
 #hamburgerMenu{
@@ -153,7 +154,7 @@
         margin-top: 1em;
     }
     
-    .specialProductsButton, #messageButton{
+    .specialProductsButton, #messageButton, #productsFinalContainer button{
         grid-row: 4;
         width: 18em;
         height: 4em;
@@ -268,15 +269,147 @@
 
 
 
-    #cartPage{
-        grid-template-columns: 4fr 1fr;
-        grid-template-rows: 1fr 5fr 1fr;
+    #productsFinalContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
         width: 100%;
-        height: 100%;
-        background: azure;
+        background: #d1c9ba;
+        text-align: center;
     }
 
-    #cartPage h2{
+    .finalProductH2{
+        grid-row: 1;
+        font-size: 2em;
+        grid-column: SPAN 2;
+        padding-bottom: 0.7em;
+        padding-top: 0.7em;
+    }
+
+    .finalProductArticle{
+        grid-row: auto;
+
+    }
+
+    .finalProductPrice{
+        float: right;
+        padding-right: 3em;
+    }
+    .finalProductAmount{
+        float: left;
+        padding-left: 3em;
+    }
+
+    #productsFinalContainer div{
+        margin-top: 0.5em;
+        grid-column: SPAN 2;
+        font-size: 1.5em;
+    }
+
+    #productsFinalContainer button{
+        font-size: 1em;
+        margin-top: 0.5em;
+        margin-bottom: 2em;
+        width:8em;
+        height: 2.5em;
+    }
+
+
+
+
+
+
+
+    #adminPageContainer{
         display: grid;
+        background-color: #d1c9ba;
+        grid-template-rows: 0.5fr auto auto;
+        width: 100%;
+        float: left;
+    }
+
+    #adminPageContainer h2{
+        text-align: center;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        grid-row: 1;
+    }
+
+    #specialProductsAdminContainer h3{
+        grid-column: SPAN 2;
+        text-align: center;
+        padding-bottom: 1em;
+    }
+
+    #specialProductsAdminContainer{
         grid-row: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #addProductsContainer h3{
+        padding: 0;
+        grid-column: SPAN 2;
+        text-align: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        
+    }
+
+    #checkboxContainer{
+        padding-left: 1em;
+        font-size: 1.1em;
+    }
+
+    .checkboxInput{
+        padding-bottom: 1em;
+    }
+
+    #inputContainer{
+        text-align: center;
+    }
+
+    .addProductsInputs{
+        width: 50%;
+        margin: auto;
+        height: 2em;
+        border-width: 0.1em;
+        font-size: 1.2em;
+        padding-left: 0.4em;
+        border-color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        border-radius: 0.5em;
+    }
+
+    #inputType{
+        margin-bottom: 1em;
+        font-size: 1.3em;
+        width: 7em;
+    }
+
+    #inputDescription{
+        width: 60%;
+        margin: auto;
+        height: 4em;
+        border-width: 0.1em;
+        font-size: 1.2em;
+        padding-left: 0.4em;
+        border-color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-bottom: 0.7em;
+        margin-top: 0.3em;
+        border-radius: 0.5em;
+    }
+
+    #addProductButton{
+        width: 50%;
+        height: 2em;
+        border-radius: 2em;
+        background-color: #a29784;
+        border: none;
+        font-size: 1.3em;
+        margin-bottom: 1em;
+        margin-top: 1em;
     }
