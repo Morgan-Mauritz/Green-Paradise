@@ -7,7 +7,7 @@
                     "rating": 4,
                     "image": "images/whitefusion.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko aewrnhufi ameuif naeuif naeufi asenuifasnfeu asneuif senf ",
+                    "description": "En fin liten blomma",
                     "stock": 1,
                     "type": "calathea"
                 },
@@ -18,7 +18,7 @@
                     "rating": 3,
                     "image": "images/makoyana.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "description": "En fin liten blomma",
                     "stock": 4,
                     "type": "calathea"
                 },
@@ -29,7 +29,7 @@
                     "rating": 5,
                     "image": "images/lancifolia.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "description": "En fin liten blomma",
                     "stock": 7,
                     "type": "calathea"
                 },
@@ -40,7 +40,7 @@
                     "rating": 3,
                     "image": "images/n'joy.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "description": "En fin liten blomma",
                     "stock": 4,
                     "type": "gullranka"
                 },
@@ -51,7 +51,7 @@
                     "rating": 4,
                     "image": "images/marblequeen.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "description": "En fin liten blomma",
                     "stock": 3,
                     "type": "gullranka"
                     
@@ -63,7 +63,7 @@
                     "rating": 5,
                     "image": "images/silverranka.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "description": "En fin liten blomma",
                     "stock": 19,
                     "type": "gullranka"
                     
@@ -75,7 +75,7 @@
                     "rating": 5,
                     "image": "images/albo.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "description": "En fin liten blomma",
                     "stock": 2,
                     "type": "monstera"
                 },
@@ -86,7 +86,7 @@
                     "rating": 4,
                     "image": "images/thaiconstellation.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "description": "En fin liten blomma",
                     "stock": 6,
                     "type": "monstera"
                 },
@@ -97,7 +97,7 @@
                     "rating": 5,
                     "image": "images/deliciosa.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "description": "En fin liten blomma",
                     "stock": 3,
                     "type": "monstera"
                 },
@@ -108,7 +108,7 @@
                     "rating": 4,
                     "image": "images/orbifolia.jpg",
                     "specialProduct": false,
-                    "description": "lorem ipsum condecer delemene kokomoko",
+                    "description": "En fin liten blomma",
                     "stock": 6,
                     "type": "calathea"
                 }
