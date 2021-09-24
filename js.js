@@ -40,6 +40,7 @@ Vue.component('sitecontent', {
 })
 
 Vue.component('aboutus', {
+
     template: `<div id='aboutUsSection'>
     <h2 id='aboutUsHeader'>Vi är Grönt Paradis</h2>
     <img id='aboutUsImg' src='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80'/>
@@ -95,29 +96,29 @@ Vue.component('productsfinal',{
     methods: {
         getProduct: function(){
          this.uniqueProductArray = Array.from(new Set(cartItems))
-            console.log(this.uniqueProductArray[0])
-            let i = 0;
+         console.log(cartItems)
+         console.log(this.uniqueProductArray)
             let tempDataArray = [];
             vueInstance.fetchResult.map(test => 
             {   
-                if(test.name === this.uniqueProductArray[i])
+                for(let i = 0; i < this.uniqueProductArray.length; i++)
                 {
-                    tempDataArray.push(test)
-                    i++
+                    if(test.name === this.uniqueProductArray[i])
+                    {
+                        console.log("TEST")
+                        console.log(test)
+                        tempDataArray.push(test)
+                    }
                 }
             })
-            console.log(tempDataArray)
 
             this.dataArray = tempDataArray
             
-
             var count = {};
             cartItems.forEach(function(i) { count[i] = (count[i]||0) + 1;});
-            console.log(count);
 
             this.dataArray.map(el => {
                 var object = Object.assign({}, el)
-                console.log(count[object.name])
 
                 let arrayOfNames = Object.getOwnPropertyNames(count);
 
@@ -145,10 +146,7 @@ Vue.component('productsfinal',{
                     tempTotalPrice += data.price
                 }
             })
-
-            console.log(tempTotalPrice)
             this.totalPrice = tempTotalPrice
-            console.log(this.totalPrice)
         },
         checkout: function(){
             alert("Tack för köpet!")
@@ -187,7 +185,6 @@ Vue.component('adminpage', {
     },
 
     methods: {
-
         changeSpecialProducts: function(productID){
             vueInstance.fetchResult.map(productOfAllProducts => {
                 
@@ -218,15 +215,13 @@ Vue.component('adminpage', {
                             }
                         })
                     }
-
-                    console.log(productOfAllProducts); 
                 }
             })
         },
 
         addProduct: function(){
             let inputName = document.getElementById('inputName').value
-            let inputPrice = document.getElementById('inputPrice').value
+            let inputPrice = parseInt(document.getElementById('inputPrice').value)
             let inputRating = document.getElementById('inputRating').value
             let inputImage = document.getElementById('inputImage').value
             let inputDescription = document.getElementById('inputDescription').value
@@ -256,18 +251,12 @@ Vue.component('adminpage', {
                         return fetchProduct.name == productToAdd.name 
                 })
 
-                console.log(boolCheck)
                 if(boolCheck == false)
                 {
                     vueInstance.fetchResult.push(productToAdd)
                 }
-            console.log(productToAdd)
             }
         }
-    },
-
-    created(){
-        console.log("skapad")
     },
 
     template: `<div id='adminPageContainer'>
@@ -323,8 +312,6 @@ var vueInstance = new Vue({
             .then(data => {
                 this.fetchResult = data.products;
                 let count = 0;
-                console.log(this.tab)
-                console.log(this.fetchResult)
 
                 data.products.map(product => {
                     if (product.specialProduct === true && count <= 2) {
@@ -384,9 +371,7 @@ Vue.component('specialproducts', {
         </section>`
 })
 
-
 //js functions
-
 
  function navCloseBtn(){
     document.getElementById('mobileNav').className = ""
@@ -401,5 +386,4 @@ function addSpecialToCart(button){
     alert(button.parentNode.querySelector('h3').textContent + " tillagd i varukorgen!")
     cartItems.push(button.parentNode.querySelector('h3').textContent)
     vueInstance.shoppingCartAmount++;
-    console.log(cartItems[0])
 }

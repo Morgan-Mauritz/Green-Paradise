@@ -30,7 +30,6 @@
                 <sitenav/>
             </div>
         
-        
         <div id="startPage"  v-show="tab == 'start'">
             <div id="contentComponent">
                 <sitecontent />
@@ -50,23 +49,14 @@
             </div>
         </div>
 
-
-
         <div id="cartPage" v-if="tab == 'cart'">
             <productsfinal/>
         </div>
-
-
 
         <div id="adminPageContainer"  v-show="tab == 'admin'" v-if='errorManagement'>
             <adminpage/>
         </div>
         
-
-
-
-
-
         <div id="footerComponent">
             <vuefooter/>
         </div>
