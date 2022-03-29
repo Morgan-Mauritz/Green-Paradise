@@ -45,7 +45,7 @@ Vue.component('aboutus', {
     <h2 id='aboutUsHeader'>Vi är Grönt Paradis</h2>
     <img id='aboutUsImg' src='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80'/>
     <h3 id='aboutUsSubHeader'>Vi lever för det gröna växtriket</h3>
-    <p id='aboutUsText'>lorem ipsum dolor amit bla bla bla text kommer här en fin beskrivning av vad vi gör på grönt paradis du vet det, jag vet det. alla vet det.</p>
+    <p id='aboutUsText'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>`
 })
 
