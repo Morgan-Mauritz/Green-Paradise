@@ -1,5 +1,5 @@
 # Green-Paradise
-Virtual E-commerce site selling green plants. 
+Virtual E-commerce site selling green plants built with Vue.js. 
 School Project!
 Mobile only, not responsive.
 
